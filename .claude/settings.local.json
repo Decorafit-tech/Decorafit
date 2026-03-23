@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /c/Users/Phellipe/plataforma-decorafit/ 2>&1 || dir \"C:\\\\Users\\\\Phellipe\\\\plataforma-decorafit\" 2>&1)"
+    ]
+  }
+}
