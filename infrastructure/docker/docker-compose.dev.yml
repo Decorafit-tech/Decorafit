@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: decorafit-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  redis-data:
+
+# Note: Supabase (PostgreSQL + Auth + Storage) is self-hosted separately on the VPS.
+# For local development, connect to the staging Supabase instance or run
+# a local Supabase via `supabase start` (requires Supabase CLI).
+# See docs/architecture/deployment.md for the full infrastructure overview.

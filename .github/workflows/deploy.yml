@@ -1,0 +1,19 @@
+name: Deploy
+
+# Deployment is handled automatically by Coolify via webhook on push to main.
+# This workflow is a placeholder for any pre-deploy checks or notifications.
+# See infrastructure/coolify/README.md for setup instructions.
+
+on:
+  workflow_dispatch:  # Manual trigger only for now
+
+jobs:
+  deploy-info:
+    name: Deploy Info
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print deploy info
+        run: |
+          echo "Deployment is managed by Coolify."
+          echo "Push to main branch triggers automatic deployment via webhook."
+          echo "See infrastructure/coolify/README.md for details."
